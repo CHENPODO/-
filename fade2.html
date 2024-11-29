@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #circle-div {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background-color: darkolivegreen;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="circle-div"></div>
+
+    <script>
+      let div = document.getElementById("circle-div");
+      let opacity = 1;
+
+      function fadeEffect() {
+        if (opacity > 0) {
+          opacity -= 0.05; // 逐漸減少透明度
+          div.style.opacity = opacity;
+          setTimeout(fadeEffect, 100); // 繼續下一步
+        } else {
+          // 當透明度歸零後重置，並稍作延遲後重新開始
+          opacity = 1;
+          div.style.opacity = opacity;
+          setTimeout(fadeEffect, 100); // 延遲後重啟
+        }
+      }
+
+      fadeEffect(); // 啟動淡出效果
+    </script>
+  </body>
+</html>

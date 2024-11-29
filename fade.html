@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>setInterval()</title>
+    <style>
+      #circle-div {
+        margin: auto;
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background-color: darkolivegreen;
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="circle-div"></div>
+
+    <script>
+      let div = document.getElementById("circle-div");
+      let opacity = 1;
+      let fadeCircle = setInterval(function () {
+        if (opacity > 0) {
+          opacity -= 0.05;
+          div.style.opacity = opacity;
+        } else {
+          clearInterval(fadeCircle);
+        }
+      }, 120);
+    </script>
+  </body>
+</html>
